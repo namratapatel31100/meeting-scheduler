@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { collection, doc, getDoc, getFirestore, updateDoc } from 'firebase/firestore'
+import { doc, getDoc, getFirestore, updateDoc } from 'firebase/firestore'
 import { app } from '@/config/FirebaseConfig'
 import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs'
 import { toast } from 'sonner'
@@ -63,6 +63,7 @@ function Availability() {
     const handleSave=async()=>{
         console.log(daysAvailable,startTime,endTime);
         const docRef=doc(db,'Business',user?.email);
+        
         await updateDoc(docRef,{
             daysAvailable:daysAvailable,
             startTime:startTime,
