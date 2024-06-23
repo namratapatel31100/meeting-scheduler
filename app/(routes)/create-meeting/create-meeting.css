@@ -1,0 +1,17 @@
+.meeting-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .meeting-grid {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+.meeting-card {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    padding: 1rem;
+}
